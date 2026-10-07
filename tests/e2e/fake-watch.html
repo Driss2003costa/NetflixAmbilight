@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Faux lecteur Netflix (test)</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000;
+        overflow: hidden;
+      }
+      .watch-video {
+        position: fixed;
+        inset: 0;
+        background: #000;
+      }
+      .layer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      video {
+        width: 100%;
+        height: 100%;
+      }
+      .player-timedtext {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 8%;
+        text-align: center;
+        color: #fff;
+        font: 600 22px sans-serif;
+        text-shadow: 0 0 4px #000;
+      }
+      .controls {
+        position: absolute;
+        left: 16px;
+        top: 12px;
+        color: #fff;
+        font: 14px sans-serif;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Structure proche du lecteur Netflix : la vidéo remplit le conteneur, les bandes viennent de object-fit -->
+    <div class="watch-video" data-uia="watch-video">
+      <div data-uia="video-canvas" class="layer">
+        <div class="layer">
+          <div class="layer">
+            <video muted playsinline></video>
+            <div class="player-timedtext">Sous-titre de test</div>
+          </div>
+        </div>
+      </div>
+      <div class="controls">← Retour</div>
+    </div>
+    <script>
+      // Source non protégée générée à la volée : chaud à gauche, froid à droite, ciel vert en haut.
+      const params = new URLSearchParams(location.search);
+      const baked = params.get('baked') === '1';
+      const W = 1280;
+      const H = baked ? 720 : 720;
+      const canvas = document.createElement('canvas');
+      canvas.width = W;
+      canvas.height = H;
+      const ctx = canvas.getContext('2d');
+      const bar = baked ? Math.round(H * 0.12) : 0;
+      function draw(t) {
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, W, H);
+        // window.swapColors = true inverse les côtés, pour vérifier que la lueur suit en direct
+        const swap = window.swapColors === true;
+        const g = ctx.createLinearGradient(0, 0, W, 0);
+        g.addColorStop(0, swap ? '#1f7bff' : '#ff5a1f');
+        g.addColorStop(0.45, '#8a3b6b');
+        g.addColorStop(1, swap ? '#ff5a1f' : '#1f7bff');
+        ctx.fillStyle = g;
+        ctx.fillRect(0, bar, W, H - 2 * bar);
+        ctx.fillStyle = '#35d07f';
+        ctx.fillRect(0, bar, W, (H - 2 * bar) * 0.25);
+        // un peu de mouvement et de détail
+        ctx.fillStyle = '#ffffff';
+        const x = (W / 2 + Math.sin(t / 600) * W * 0.25) | 0;
+        ctx.fillRect(x, H / 2 - 30, 60, 60);
+        requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+      const video = document.querySelector('video');
+      video.srcObject = canvas.captureStream(30);
+      video.play();
+      // Comme sur Netflix, l'interface disparaît après quelques secondes sans bouger la souris.
+      setTimeout(() => (document.querySelector('.controls').style.display = 'none'), 2000);
+    </script>
+  </body>
+</html>

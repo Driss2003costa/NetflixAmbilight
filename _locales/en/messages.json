@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "CinéHalo" },
+  "extDescription": {
+    "message": "An ambient glow in the black bars of the Netflix player. Colors follow the picture, like a TV with ambient lighting."
+  },
+  "actionTitle": { "message": "CinéHalo: click to turn on the glow for this tab" },
+  "cmdToggle": { "message": "Turn the glow on or off" },
+
+  "enableLabel": { "message": "Turn the glow on" },
+  "presetsTitle": { "message": "Mood" },
+  "presetSubtle": { "message": "Subtle" },
+  "presetBalanced": { "message": "Balanced" },
+  "presetIntense": { "message": "Intense" },
+  "presetCustom": { "message": "Custom" },
+
+  "captureTitle": { "message": "Capture" },
+  "modeAuto": { "message": "Auto" },
+  "modeAutoHint": { "message": "2 frames/s, invisible" },
+  "modeRealtime": { "message": "Real time" },
+  "modeRealtimeHint": { "message": "smooth, shares the tab" },
+
+  "advancedTitle": { "message": "Advanced settings" },
+  "intensity": { "message": "Intensity" },
+  "saturation": { "message": "Saturation" },
+  "reach": { "message": "Reach" },
+  "smoothing": { "message": "Transition" },
+  "zones": { "message": "Zones per side" },
+  "ecoAuto": { "message": "Auto eco mode" },
+  "ecoAutoHint": { "message": "Fewer captures and zones on battery" },
+  "bakedBars": { "message": "Burned-in bars" },
+  "bakedBarsHint": { "message": "Also detects black bars encoded inside the video" },
+  "reset": { "message": "Back to default settings" },
+
+  "shortcutLabel": { "message": "Shortcut" },
+  "shortcutChange": { "message": "Change" },
+  "shortcutNone": { "message": "none" },
+  "ecoBadge": { "message": "eco" },
+
+  "status_not_netflix": { "message": "Open a movie or a show on Netflix, the glow takes care of the rest." },
+  "status_reload": { "message": "Reload the Netflix tab to turn CinéHalo on." },
+  "status_disabled": { "message": "Glow is off." },
+  "status_not_watch": { "message": "Start playing something to see the glow." },
+  "status_waiting": { "message": "Waiting for the video…" },
+  "status_needs_click": { "message": "Click the CinéHalo icon to allow capture in this tab." },
+  "status_black": { "message": "The capture comes back black, DRM is probably blocking the picture on this setup." },
+  "blackTip": {
+    "message": "On Windows, turning off Chrome's hardware acceleration (Settings > System) and relaunching may help. It isn't guaranteed."
+  },
+  "status_error": {
+    "message": "Capture error: $ERROR$",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "status_detecting": { "message": "Looking for black bars in the picture…" },
+  "status_no_bars": { "message": "No black bars here, the glow stays off." },
+  "status_paused": { "message": "Paused, the glow is frozen." },
+  "status_active_auto": { "message": "Glow on · auto capture" },
+  "status_active_realtime": { "message": "Glow on · real time" }
+}

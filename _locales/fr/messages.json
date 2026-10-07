@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "CinéHalo" },
+  "extDescription": {
+    "message": "Une lueur d'ambiance dans les bandes noires du lecteur Netflix. Les couleurs suivent l'image, comme sur une TV à éclairage d'ambiance."
+  },
+  "actionTitle": { "message": "CinéHalo : clique pour activer la lueur sur cet onglet" },
+  "cmdToggle": { "message": "Allumer ou éteindre la lueur" },
+
+  "enableLabel": { "message": "Activer la lueur" },
+  "presetsTitle": { "message": "Ambiance" },
+  "presetSubtle": { "message": "Subtil" },
+  "presetBalanced": { "message": "Équilibré" },
+  "presetIntense": { "message": "Intense" },
+  "presetCustom": { "message": "Perso" },
+
+  "captureTitle": { "message": "Capture" },
+  "modeAuto": { "message": "Auto" },
+  "modeAutoHint": { "message": "2 images/s, invisible" },
+  "modeRealtime": { "message": "Temps réel" },
+  "modeRealtimeHint": { "message": "fluide, partage d'onglet" },
+
+  "advancedTitle": { "message": "Réglages avancés" },
+  "intensity": { "message": "Intensité" },
+  "saturation": { "message": "Saturation" },
+  "reach": { "message": "Portée" },
+  "smoothing": { "message": "Transition" },
+  "zones": { "message": "Zones par côté" },
+  "ecoAuto": { "message": "Mode éco auto" },
+  "ecoAutoHint": { "message": "Moins de captures et de zones sur batterie" },
+  "bakedBars": { "message": "Bandes incrustées" },
+  "bakedBarsHint": { "message": "Détecte aussi les bandes noires encodées dans la vidéo" },
+  "reset": { "message": "Revenir aux réglages d'origine" },
+
+  "shortcutLabel": { "message": "Raccourci" },
+  "shortcutChange": { "message": "Modifier" },
+  "shortcutNone": { "message": "aucun" },
+  "ecoBadge": { "message": "éco" },
+
+  "status_not_netflix": { "message": "Ouvre un film ou une série sur Netflix, la lueur s'occupe du reste." },
+  "status_reload": { "message": "Recharge l'onglet Netflix pour activer CinéHalo." },
+  "status_disabled": { "message": "Lueur éteinte." },
+  "status_not_watch": { "message": "Lance la lecture d'un titre pour voir la lueur." },
+  "status_waiting": { "message": "En attente de la vidéo…" },
+  "status_needs_click": { "message": "Clique sur l'icône CinéHalo pour autoriser la capture dans cet onglet." },
+  "status_black": { "message": "La capture revient noire, le DRM bloque sûrement l'image sur cette config." },
+  "blackTip": {
+    "message": "Sur Windows, couper l'accélération matérielle de Chrome (Paramètres > Système) puis relancer peut aider. Ce n'est pas garanti."
+  },
+  "status_error": {
+    "message": "Erreur de capture : $ERROR$",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "status_detecting": { "message": "Recherche de bandes noires dans l'image…" },
+  "status_no_bars": { "message": "Pas de bandes noires ici, la lueur reste éteinte." },
+  "status_paused": { "message": "En pause, la lueur est figée." },
+  "status_active_auto": { "message": "Lueur active · capture auto" },
+  "status_active_realtime": { "message": "Lueur active · temps réel" }
+}

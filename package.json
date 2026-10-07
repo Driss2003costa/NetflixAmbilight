@@ -1,0 +1,12 @@
+{
+  "name": "cinehalo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Extension Chrome : lueur d'ambiance dans les bandes noires du lecteur Netflix.",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "e2e": "xvfb-run -a -s \"-screen 0 1920x1080x24\" node tests/e2e/run.cjs",
+    "icons": "python3 tools/make_icons.py",
+    "zip": "sh tools/pack.sh"
+  }
+}

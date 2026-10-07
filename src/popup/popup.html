@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CinéHalo</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <div class="brand">
+          <img src="../../icons/icon48.png" alt="" width="30" height="30" />
+          <div>
+            <h1 data-i18n="extName">CinéHalo</h1>
+            <span class="eco" id="eco" hidden data-i18n="ecoBadge"></span>
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="enabled" />
+          <span class="track" aria-hidden="true"><span class="thumb"></span></span>
+          <span class="sr" data-i18n="enableLabel"></span>
+        </label>
+      </header>
+
+      <p class="status" id="status" data-state="idle">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="statusText"></span>
+      </p>
+      <p class="tip" id="tip" hidden data-i18n="blackTip"></p>
+
+      <section class="block">
+        <h2 data-i18n="presetsTitle"></h2>
+        <div class="presets" role="radiogroup">
+          <button type="button" class="preset" data-preset="subtle" role="radio">
+            <span class="screen" aria-hidden="true"><i></i></span>
+            <span data-i18n="presetSubtle"></span>
+          </button>
+          <button type="button" class="preset" data-preset="balanced" role="radio">
+            <span class="screen" aria-hidden="true"><i></i></span>
+            <span data-i18n="presetBalanced"></span>
+          </button>
+          <button type="button" class="preset" data-preset="intense" role="radio">
+            <span class="screen" aria-hidden="true"><i></i></span>
+            <span data-i18n="presetIntense"></span>
+          </button>
+        </div>
+        <p class="custom" id="custom" hidden data-i18n="presetCustom"></p>
+      </section>
+
+      <section class="block">
+        <h2 data-i18n="captureTitle"></h2>
+        <div class="segmented" role="radiogroup">
+          <button type="button" data-mode="auto" role="radio">
+            <strong data-i18n="modeAuto"></strong>
+            <small data-i18n="modeAutoHint"></small>
+          </button>
+          <button type="button" data-mode="realtime" role="radio">
+            <strong data-i18n="modeRealtime"></strong>
+            <small data-i18n="modeRealtimeHint"></small>
+          </button>
+        </div>
+      </section>
+
+      <details class="advanced" id="advanced">
+        <summary data-i18n="advancedTitle"></summary>
+        <div class="sliders">
+          <label class="slider">
+            <span class="row"><span data-i18n="intensity"></span><output id="intensityOut"></output></span>
+            <input type="range" id="intensity" data-key="intensity" />
+          </label>
+          <label class="slider">
+            <span class="row"><span data-i18n="saturation"></span><output id="saturationOut"></output></span>
+            <input type="range" id="saturation" data-key="saturation" />
+          </label>
+          <label class="slider">
+            <span class="row"><span data-i18n="reach"></span><output id="reachOut"></output></span>
+            <input type="range" id="reach" data-key="reach" />
+          </label>
+          <label class="slider">
+            <span class="row"><span data-i18n="smoothing"></span><output id="smoothingMsOut"></output></span>
+            <input type="range" id="smoothingMs" data-key="smoothingMs" />
+          </label>
+          <label class="slider">
+            <span class="row"><span data-i18n="zones"></span><output id="zonesOut"></output></span>
+            <input type="range" id="zones" data-key="zones" />
+          </label>
+        </div>
+        <label class="check">
+          <input type="checkbox" id="ecoAuto" />
+          <span><strong data-i18n="ecoAuto"></strong><small data-i18n="ecoAutoHint"></small></span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="bakedBars" />
+          <span><strong data-i18n="bakedBars"></strong><small data-i18n="bakedBarsHint"></small></span>
+        </label>
+        <button type="button" class="reset" id="reset" data-i18n="reset"></button>
+      </details>
+
+      <footer class="foot">
+        <span><span data-i18n="shortcutLabel"></span> <kbd id="shortcut"></kbd></span>
+        <button type="button" class="link" id="shortcuts" data-i18n="shortcutChange"></button>
+      </footer>
+    </main>
+    <script src="../shared/settings.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
